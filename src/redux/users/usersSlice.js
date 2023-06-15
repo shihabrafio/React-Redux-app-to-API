@@ -3,7 +3,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const URL = 'https://jsonplaceholder.typicode.com/users'
+const URL = 'https://jsonplaceholder.typicode.com/users';
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async (thunk) => {
   try {
     // Fetch your data here and return it
@@ -14,7 +14,6 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async (thunk) => 
     return thunk.rejectWithValue(error.message);
   }
 });
-
 
 const usersSlice = createSlice({
   name: 'users',
@@ -38,7 +37,6 @@ const usersSlice = createSlice({
     });
   },
 });
-
 
 export const { actions } = usersSlice;
 export default usersSlice.reducer;
